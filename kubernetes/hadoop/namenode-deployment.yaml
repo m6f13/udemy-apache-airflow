@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: namenode
+  namespace: udemy-airflow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: namenode
+  template:
+    metadata:
+      labels:
+        component: namenode
+    spec:
+      hostname: namenode
+      containers:
+        - name: namenode
+          image: m6f13/custom-hadoop-namenode:3.3.6
+          #command: ["hdfs", "namenode"]
+          ports:
+            - containerPort: 9870
+          #envFrom:
+          #  - configMapRef:
+          #      name: hadoop-config
+          env:
+            - name: ENSURE_NAMENODE_DIR
+              value: "/hadoop/dfs/name"
+          volumeMounts:
+            - name: namenode-storage
+              mountPath: /tmp/hadoop-root/dfs/name
+      volumes:
+        - name: namenode-storage
+          persistentVolumeClaim:
+            claimName: namenode-pvc

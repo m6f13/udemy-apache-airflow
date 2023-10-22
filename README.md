@@ -7,8 +7,13 @@ Udemy Apache Airflow Hands on Guide
 - https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
 - https://airflow.apache.org/docs/helm-chart/stable/index.html
 - https://artifacthub.io/packages/helm/runix/pgadmin4
+## Spark
 - https://spark.apache.org/docs/latest/running-on-kubernetes.html
+## Hadoop
+- https://artifacthub.io/packages/helm/apache-hadoop-helm/hadoop
+## InfluxDB
 - https://artifacthub.io/packages/helm/influxdata/influxdb
+- https://github.com/influxdata/helm-charts
 
 ## Docker
 start docker-compose
@@ -105,4 +110,8 @@ helm upgrade --install pgadmin runix/pgadmin4 \
   --set env.password=admin \
   --set persistentVolume.size=2Gi \
   --set persistentVolume.storageClass=nfs-client
+```
+### Hadoop
+```shell
+
 ```
