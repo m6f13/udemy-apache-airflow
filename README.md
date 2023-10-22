@@ -3,10 +3,12 @@ Udemy Apache Airflow Hands on Guide
 
 # Notes to run Airflow
 ## Links
+- https://docs.stackable.tech/home/stable/getting_started
 - https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
 - https://airflow.apache.org/docs/helm-chart/stable/index.html
 - https://artifacthub.io/packages/helm/runix/pgadmin4
 - https://spark.apache.org/docs/latest/running-on-kubernetes.html
+- https://artifacthub.io/packages/helm/influxdata/influxdb
 
 ## Docker
 start docker-compose
