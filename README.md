@@ -11,6 +11,7 @@ Udemy Apache Airflow Hands on Guide
 - https://spark.apache.org/docs/latest/running-on-kubernetes.html
 ## Hadoop
 - https://artifacthub.io/packages/helm/apache-hadoop-helm/hadoop
+- https://github.com/big-data-europe/docker-hadoop/blob/master/base/Dockerfile
 ## InfluxDB
 - https://artifacthub.io/packages/helm/influxdata/influxdb
 - https://github.com/influxdata/helm-charts
@@ -114,4 +115,20 @@ helm upgrade --install pgadmin runix/pgadmin4 \
 ### Hadoop
 ```shell
 
+```
+
+## Stackable
+namespace = stackable
+```shell
+stackablectl operator install \
+  commons=23.7.0 \
+  secret=23.7.0 \
+  zookeeper=23.7.0 \
+  hdfs=23.7.0 --operator-namespace stackable
+```
+in folder: stackable/hdfs
+```shell
+kubectl apply -f zk.yaml
+kubectl apply -f znode.yaml
+kubectl apply -f hdfs.yaml
 ```

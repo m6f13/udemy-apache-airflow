@@ -1,0 +1,27 @@
+---
+apiVersion: airflow.stackable.tech/v1alpha1
+kind: AirflowCluster
+metadata:
+  name: airflow
+  namespace: stackable
+spec:
+  image:
+    productVersion: 2.6.1
+    stackableVersion: 23.7.0
+  clusterConfig:
+    executor: CeleryExecutor
+    loadExamples: false
+    exposeConfig: false
+    credentialsSecret: simple-airflow-credentials
+  webservers:
+    roleGroups:
+      default:
+        replicas: 1
+  workers:
+    roleGroups:
+      default:
+        replicas: 2
+  schedulers:
+    roleGroups:
+      default:
+        replicas: 1
